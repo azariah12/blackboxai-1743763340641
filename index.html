@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),
+                              url('https://images.pexels.com/photos/3945317/pexels-photo-3945317.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .content-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-gradient-to-b from-black to-transparent">
+        <div class="flex justify-between items-center px-12 py-4">
+            <div class="w-32">
+                <svg viewBox="0 0 111 30" class="fill-[#e50914] w-full h-full">
+                    <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"></path>
+                </svg>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-[#e50914] px-4 py-1 rounded text-white font-medium">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-5xl font-bold mb-4">Unlimited movies, TV shows, and more.</h1>
+            <h2 class="text-2xl mb-6">Watch anywhere. Cancel anytime.</h2>
+            <div class="flex flex-col sm:flex-row gap-2 justify-center">
+                <input type="email" placeholder="Email address" class="px-4 py-3 w-full sm:w-96 rounded">
+                <button class="bg-[#e50914] text-white px-6 py-3 rounded font-bold text-xl flex items-center gap-2 justify-center">
+                    Get Started <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="py-16 px-8 space-y-12">
+        <!-- Trending Now -->
+        <section>
+            <h3 class="text-2xl font-bold mb-6">Trending Now</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <!-- Repeat 6 times for demo -->
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 1" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 2" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 3" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 4" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 5" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 6" class="w-full h-auto rounded">
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Picks -->
+        <section>
+            <h3 class="text-2xl font-bold mb-6">Top Picks for You</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <!-- Repeat 6 times for demo -->
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 1" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 2" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 3" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 4" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 5" class="w-full h-auto rounded">
+                </div>
+                <div class="content-card">
+                    <img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg" alt="Movie 6" class="w-full h-auto rounded">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-12 px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8">
+                <p>Questions? Call 1-844-505-2993</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Investor Relations</a></li>
+                        <li><a href="#" class="hover:underline">Ways to Watch</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Help Center</a></li>
+                        <li><a href="#" class="hover:underline">Jobs</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Account</a></li>
+                        <li><a href="#" class="hover:underline">Redeem Gift Cards</a></li>
+                        <li><a href="#" class="hover:underline">Privacy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">Media Center</a></li>
+                        <li><a href="#" class="hover:underline">Buy Gift Cards</a></li>
+                        <li><a href="#" class="hover:underline">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex space-x-4 mb-8">
+                <a href="#"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="#"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+            <div>
+                <p>&copy; 2023 Netflix Clone</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
